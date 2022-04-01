@@ -44,11 +44,14 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: 'images/[contenthash].[ext]'
-                }
+                use: [
+                    {
+                      loader: 'file-loader',
+                      options: {
+                        name: 'images/[hash]-[name].[ext]',
+                      },
+                    },
+                  ],
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,

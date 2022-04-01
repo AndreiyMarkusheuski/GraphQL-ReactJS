@@ -1,6 +1,10 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 
-const Card = ({ title }) => <>{title}</>;
+const Card = ({ title }) => {
+    const params = useParams();
+    // console.log(params)
+    return <>{title}</>
+}
 
 export default Card;

@@ -5,7 +5,7 @@ export const CurrencyContext = React.createContext({
 })
 
 export const CurrencyProvider = ({children}) => {
-    const [currentCurrency, setCurrentCurrency] = useState("USD");
+    const [currentCurrency, setCurrentCurrency] = useState("$");
     const handleChangeCurrency = useCallback((newCurrency) => {
         setCurrentCurrency(newCurrency)
     }, [currentCurrency]);

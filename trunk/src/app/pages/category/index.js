@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { CurrencyContext } from "../../context";
 import { GET_PRODUCTS } from "../../helpers/graphql-requests";
-import Loader from "../../components/Loader";
 import { getPrice } from "../../helpers/index";
 
-import Card from "../../components/Card";
+import Card from "../../components/UI/card";
+import Loader from "../../components/UI/loader";
 
 import styled from "styled-components";
 

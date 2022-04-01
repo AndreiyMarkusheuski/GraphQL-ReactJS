@@ -1,18 +1,13 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
 import Card from "./card";
+import { Routes, Route } from "react-router-dom";
 import Category from "./category";
 import Product from "./pdp";
+import Header from "../components/Header/";
 
 const Main = () => (
   <div className="App">
-    <nav>
-      <a href='/'>a</a>
-      <Link to="/">Category</Link>
-      <Link to="/product/1">Product</Link>
-      <Link to="/card">Card</Link>
-    </nav>
-    <h1>Test run</h1>
+    <Header/>
     <Routes>
       <Route path="/" element={<Category title={"Category"} />} />
       <Route path="/product/:id" element={<Product title={"Product"} />} />
