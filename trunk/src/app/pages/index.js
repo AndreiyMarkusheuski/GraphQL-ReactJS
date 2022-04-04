@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./card";
+import Cart from "./cart";
 import { Routes, Route } from "react-router-dom";
 import Category from "./category";
 import Product from "./pdp";
@@ -9,9 +9,9 @@ const Main = () => (
   <div className="App">
     <Header/>
     <Routes>
-      <Route path="/" element={<Category title={"Category"} />} />
-      <Route path="/product/:id" element={<Product title={"Product"} />} />
-      <Route path="/card" element={<Card title={"Card"} />} />
+      <Route path="/category/:filter" element={<Category title={"Category"} />} />
+      <Route path="/tech" element={<Product title={"Product"} />} />
+      <Route path="/clothes" element={<Cart title={"Cart"} />} />
     </Routes>
   </div>
 );

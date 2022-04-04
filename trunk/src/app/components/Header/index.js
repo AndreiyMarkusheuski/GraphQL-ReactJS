@@ -1,6 +1,7 @@
 import React from "react";
 import CustomNavLink from "../UI/nav-link";
 import Currency from "./currency";
+import Nav from "./nav";
 import "./style.scss";
 import logo from "../../../assets/images/svg/brand-icon.svg";
 import bucket from "../../../assets/images/svg/bucket.svg";
@@ -10,11 +11,7 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-nav">
-          <nav className="nav">
-            <CustomNavLink title="Category" path="/"/>
-            <CustomNavLink title="Product" path="/product/1"/>
-            <CustomNavLink title="Card" path="/card"/>
-          </nav>
+          <Nav/>
         </div>
         <div className="header-logo">
           <img className="logo" src={logo} alt="logo" />

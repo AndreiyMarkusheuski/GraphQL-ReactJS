@@ -20,6 +20,26 @@ export const GET_PRODUCTS = gql`
   }
 `;
 
+export const GET_PRODUCTS_BY_CATEGORIGY = gql`
+  query ($filter: String!){
+    category(input: { title: $filter }) {
+      products {
+        id
+        name
+        inStock
+        prices {
+          currency {
+            label
+            symbol
+          }
+          amount
+        }
+        gallery
+      }
+    }
+  }
+`;
+
 export const GET_PRODUCT_BY_ID = gql`
   query ($id: String!) {
     product(id: $id) {
@@ -43,6 +63,14 @@ export const GET_CURRENCY = gql`
     currencies {
       label
       symbol
+    }
+  }
+`;
+
+export const GET_CAREGORIES = gql`
+  query {
+    categories {
+      name
     }
   }
 `;
