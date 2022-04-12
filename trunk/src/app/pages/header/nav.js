@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_CAREGORIES } from "../../helpers/graphql-requests";
-import CustomNavLink from "../UI/nav-link";
+import CustomNavLink from '../../components/UI/nav-link'
 
 const Nav = () => {
   const [category, setCategory] = useState("");

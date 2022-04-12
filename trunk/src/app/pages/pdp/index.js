@@ -8,7 +8,6 @@ const Product = ({ title }) => {
     const { loading, error, data } = useQuery(GET_PRODUCT_BY_ID, {
         variables: { id },
       });
-    console.log(data)
     return (
         <>{title} with id: {id}</>
     )

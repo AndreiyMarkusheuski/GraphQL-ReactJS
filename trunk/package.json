@@ -53,6 +53,9 @@
         "@mui/material": "^5.5.3",
         "core-js": "^3.3.6",
         "graphql": "^16.3.0",
+        "react-redux": "^7.2.8",
+        "redux": "^4.1.2",
+        "redux-thunk": "^2.4.1",
         "styled-components": "^5.3.5"
     }
 }

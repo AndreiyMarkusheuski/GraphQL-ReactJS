@@ -3,10 +3,10 @@ import './style.scss'
 
 import bucket from "../../../assets/images/svg/bucket-white.svg";
 
-const Card = ({ id, image_src, name, price, isActive }) => (
+const Card = ({ id, image_src, name, price, isActive, onBucketClick }) => (
   <div className={`card ${isActive}`}>
     <img className="card__image" src={image_src} alt={name} />
-    <div className='card__bucket' onClick={() => console.log(id)}>
+    <div className='card__bucket' onClick={(e) => {e.preventDefault(); onBucketClick()}}>
       <img className="card_bucket" src={bucket} alt="bucket" />
     </div>
     <div>

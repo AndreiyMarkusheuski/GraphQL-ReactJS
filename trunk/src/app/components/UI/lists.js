@@ -1,6 +1,6 @@
 import React from "react";
 
-const Dropdown = ({ data, handleChange }) => {
+const Lists = ({ data, handleChange }) => {
   return (
     <ul className="lists">
       {data.map(({ label, symbol }) => {
@@ -14,4 +14,4 @@ const Dropdown = ({ data, handleChange }) => {
   );
 };
 
-export default Dropdown;
+export default Lists;

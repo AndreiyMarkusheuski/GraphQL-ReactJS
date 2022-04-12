@@ -1,0 +1,115 @@
+.list {
+    background: #FFFFFF;
+    padding: 10px 15px;
+    width: 295px;
+
+    &__bag {
+        text-align: left;
+        margin-bottom: 20px;
+
+        span {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 160%;
+            color: #1D1F22;
+        }
+    }
+
+    &__price {
+        margin-bottom: 35px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        span {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 160%;
+            color: #1D1F22;
+        }
+    }
+
+    &__orders {
+        position: relative;
+        height: auto;
+        z-index: 2;
+        padding: 0;
+        margin: 0;
+
+        .item {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            // height: 137px;
+
+            margin-bottom: 40px;
+
+            &_description {
+                width: 136px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+
+                &>div {
+                    margin-bottom: 10px;
+                }
+
+                h2, h3, p {
+                    font-family: 'Raleway';
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 16px;
+                    line-height: 160%;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                p {
+                    font-weight: 600;
+                }
+            }
+
+            &_btns {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                p {
+                    font-family: 'Raleway';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 160%;
+                    text-align: center;
+
+                    color: #1D1F22;
+                }
+            }
+
+            &_img {
+                height: 100%;
+                img {
+                    width: 105px;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    &__btns {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+    }
+}

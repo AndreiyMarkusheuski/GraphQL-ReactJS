@@ -1,7 +1,7 @@
 @import './vendors/normalize.css';
 
 @font-face {
-    font-family: Raleway;
+    font-family: "Raleway";
     src: url(../fonts/Raleway.ttf);
 }
 
@@ -18,6 +18,62 @@ body {
 }
 
 .container {
+    position: relative;
     margin: 0 auto;
     max-width: 1250px;
+}
+
+.styledBtn {
+    border: none;
+    color: #1D1F22;
+    transition: all .3s ease;
+
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+
+    text-decoration: none;
+    outline: none;
+
+    &.--square {
+        width: 24px;
+        height: 24px;
+    }
+
+    &.--text-btn {
+        padding: 13px 0;
+        width: 140px;
+    }
+
+    &.--border {
+        background: #FFFFFF;
+        border: 1px solid #1D1F22;
+    }
+
+    &.--green {
+        color: #FFFFFF;
+        background: #5ECE7B;
+        border: 1px solid #5ECE7B;
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        opacity: 1 !important;
+    }
+
+    &.selected {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    &.no-selected {
+        opacity: .5;
+    }
+}
+
+.m-r-5 {
+    margin-right: 5px;
 }
