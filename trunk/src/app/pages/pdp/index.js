@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { GET_PRODUCT_BY_ID } from "../../helpers/graphql-requests";
+import { GET_PRODUCT_BY_ID } from "../../graphql-requests";
 
 const Product = ({ title }) => {
     const {id} = useParams();

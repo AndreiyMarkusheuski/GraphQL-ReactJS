@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
+
 import { useQuery } from "@apollo/client";
-import { GET_CURRENCY } from "../../helpers/graphql-requests";
+import { GET_CURRENCY } from "../../graphql-requests";
+
+import CurrencyList from "../../components/currency-list";
+import Popup from "../../components/popup";
 
 import { CurrencyContext } from "../../context/currency";
-import Lists from "../../components/UI/lists";
-import Popup from '../../components/popup'
 
 import arrow from "../../../assets/images/svg/arrow.svg";
 
@@ -30,7 +32,7 @@ const Currency = () => {
       </div>
       {currency && (
         <Popup options={`${isPopupActive ? "active" : ""} left top`}>
-          <Lists data={currency} handleChange={handleChangeCurrency} />
+          <CurrencyList data={currency} handleChange={handleChangeCurrency} />
         </Popup>
       )}
     </div>

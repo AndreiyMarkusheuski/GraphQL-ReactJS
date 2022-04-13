@@ -1,11 +1,13 @@
 import React from "react";
-import Cart from "./cart";
 import { Routes, Route, Navigate } from "react-router-dom";
+
 import { Provider } from "react-redux";
+import store from "../Redux/store";
+
 import Category from "./category";
 import Product from "./pdp";
 import Header from "./header";
-import store from "../Redux/store";
+import Cart from "./cart";
 
 const Main = () => (
   <Provider store={store} className="App">
@@ -17,10 +19,7 @@ const Main = () => (
       />
       <Route path="/tech" element={<Product title={"Product"} />} />
       <Route path="/cart" element={<Cart title={"Cart"} />} />
-      <Route
-        path="*"
-        element={<Navigate to='/category/all' replace/>}
-      />
+      <Route path="*" element={<Navigate to="/category/all" replace />} />
     </Routes>
   </Provider>
 );

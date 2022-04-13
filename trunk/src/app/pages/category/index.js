@@ -1,17 +1,19 @@
-import React, { useContext, useReducer } from "react";
-import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
-import { CurrencyContext } from "../../context/currency";
-import { GET_PRODUCTS_BY_CATEGORIGY } from "../../helpers/graphql-requests";
-import { getPrice } from "../../helpers/index";
+import React, { useContext } from "react";
+import "./style.scss";
 
-import Card from "../../components/card";
-import Loader from "../../components/UI/loader";
+import { useQuery } from "@apollo/client";
+import { useParams, Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addOrderMiddleware } from "../../Redux/middlewares";
 
-import { Grid, StyledLink, StyledDisableCard } from "./styled-component";
+import { GET_PRODUCTS_BY_CATEGORIGY } from "../../graphql-requests";
+import { getPrice } from "../../helpers";
+
+import ProductCard from "../../components/product-card";
+import Loader from "../../components/loader";
+
+import { CurrencyContext } from "../../context/currency";
 
 const Category = ({ title }) => {
   const dispatch = useDispatch();
@@ -27,15 +29,26 @@ const Category = ({ title }) => {
       <div className="category">
         <div className="container">
           <h1>{title}</h1>
-          <Grid>
+          <div className="category_content">
             {data.category.products.map(
-              ({ id, gallery, name, inStock, prices, description, brand, attributes }, index) => (
-                <StyledLink
+              ({
+                id,
+                gallery,
+                name,
+                inStock,
+                prices,
+                description,
+                brand,
+                attributes,
+              }) => (
+                <Link
                   to={`/product/${id}`}
-                  className={inStock ? "active" : "disable"}
-                  key={index}
+                  className={`category_product__link ${
+                    inStock ? "active" : "disable"
+                  }`}
+                  key={id}
                 >
-                  <Card
+                  <ProductCard
                     id={id}
                     image_src={gallery[0]}
                     name={name}
@@ -51,20 +64,20 @@ const Category = ({ title }) => {
                           count: 1,
                           description,
                           brand,
-                          attributes
+                          attributes,
                         })
                       );
                     }}
                   />
                   {!inStock && (
-                    <StyledDisableCard className="card-disable">
+                    <div className="category_card-disable">
                       <p>out of stock</p>
-                    </StyledDisableCard>
+                    </div>
                   )}
-                </StyledLink>
+                </Link>
               )
             )}
-          </Grid>
+          </div>
         </div>
       </div>
     );

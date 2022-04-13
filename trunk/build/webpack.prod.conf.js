@@ -22,7 +22,6 @@ module.exports = merge(common, {
             lang: 'en',
             filename: 'index.html',
             template: './src/index.html',
-            favicon: './src/assets/images/favicon.ico',
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,

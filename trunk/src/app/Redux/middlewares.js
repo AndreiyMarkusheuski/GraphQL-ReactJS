@@ -31,14 +31,14 @@ export const updateAttributes =
     const copyState = [...state];
 
     const updatedAttrs = attributes.map((attr) => {
-      const updated = {...attr};
+      const updated = { ...attr };
       if (attr.id === attributeSet) {
         const parsedAttr = attr.items.map((elem) => ({
           ...elem,
           isSelected: elem.id === attribute,
         }));
-        updated.items = parsedAttr ;
-      } 
+        updated.items = parsedAttr;
+      }
       return updated;
     });
 

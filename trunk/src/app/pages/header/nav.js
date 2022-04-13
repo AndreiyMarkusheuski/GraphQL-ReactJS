@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+
 import { useQuery } from "@apollo/client";
-import { GET_CAREGORIES } from "../../helpers/graphql-requests";
-import CustomNavLink from '../../components/UI/nav-link'
+import { GET_CAREGORIES } from "../../graphql-requests";
+
+import CustomNavLink from "../../components/nav-link";
 
 const Nav = () => {
   const [category, setCategory] = useState("");
@@ -15,7 +17,11 @@ const Nav = () => {
     <nav className="nav">
       {category &&
         category.map(({ name }) => (
-          <CustomNavLink key={name} title={`${name.toUpperCase()}`} path={`/category/${name}`} />
+          <CustomNavLink
+            key={name}
+            title={`${name.toUpperCase()}`}
+            path={`/category/${name}`}
+          />
         ))}
     </nav>
   );

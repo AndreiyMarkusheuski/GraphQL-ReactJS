@@ -1,7 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import List from "../../components/list";
 import "./style.scss";
+
+import { useSelector } from "react-redux";
+
+import OrdersList from "../../components/orders-list";
 
 const Cart = ({ title }) => {
   const orders = useSelector((store) => store);
@@ -9,7 +11,7 @@ const Cart = ({ title }) => {
     <div className="cart">
       <div className="container">
         <h1>{title}</h1>
-        {orders.length > 0 && <List orders={orders} />}
+        {orders.length > 0 && <OrdersList orders={orders} />}
       </div>
     </div>
   );

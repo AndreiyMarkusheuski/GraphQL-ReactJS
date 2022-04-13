@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import { getCookie, setCookies } from "../helpers";
 
 export const CurrencyContext = React.createContext({
-  currentCurrency: "USD",
+  currentCurrency: "",
 });
 
 export const CurrencyProvider = ({ children }) => {

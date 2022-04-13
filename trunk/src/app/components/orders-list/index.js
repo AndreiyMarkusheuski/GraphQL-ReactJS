@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
+import "./style.scss";
+
 import { useDispatch } from "react-redux";
-import Attributes from "../UI/attributes";
 import { CurrencyContext } from "../../context/currency";
 import {
   addOneMore,
   removeOneMore,
   updateAttributes,
 } from "../../Redux/middlewares";
-import { getPrice } from "../../helpers";
-import "./style.scss";
 
-const List = ({ orders, options }) => {
+import Attributes from "../attributes";
+
+import { getPrice } from "../../helpers";
+
+const OrdersList = ({ orders, options }) => {
   const dispatch = useDispatch();
   const { currentCurrency } = useContext(CurrencyContext);
 
@@ -64,4 +67,4 @@ const List = ({ orders, options }) => {
   );
 };
 
-export default List;
+export default OrdersList;

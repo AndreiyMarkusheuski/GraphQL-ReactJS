@@ -7,10 +7,10 @@ const reducer = (state = initState, action) => {
     case actions.ADD_ONE_ORDER:
       return [...state, action.value];
     case actions.REMOVE_ONE_ORDER:
-      return state.filter((item) => item.id !== action.value.id);
-    case actions.UPDATE_ORDERS: {
+      const copyState = [...state];
+      return copyState.filter((item) => item.id !== action.value.id);
+    case actions.UPDATE_ORDERS:
       return action.value;
-    }
     default:
       return state;
   }

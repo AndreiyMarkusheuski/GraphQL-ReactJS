@@ -42,5 +42,5 @@ export const setCookies = (name, data) => {
 };
 
 export const setLocalStorage = (name, data) => {
-  localStorage.setItem(`${name}`,`${JSON.stringify(data)}`)
+  localStorage.setItem(`${name}`, `${JSON.stringify(data)}`);
 };

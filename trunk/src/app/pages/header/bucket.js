@@ -1,18 +1,21 @@
 import React, { useContext, useState } from "react";
-import CustomNavLink from "../../components/UI/nav-link";
 import { useSelector } from "react-redux";
-import { CurrencyContext } from "../../context/currency";
-import { getPricesSum } from "../../helpers";
-import Popup from "../../components/popup";
-import bucket from "../../../assets/images/svg/bucket.svg";
 
-import List from "../../components/list";
+import Popup from "../../components/popup";
+import CustomNavLink from "../../components/nav-link";
+import OrdersList from "../../components/orders-list";
+
+import { CurrencyContext } from "../../context/currency";
+
+import { getPricesSum } from "../../helpers";
+
+import bucket from "../../../assets/images/svg/bucket.svg";
 
 const Bucket = () => {
   const store = useSelector((state) => state);
   const { currentCurrency } = useContext(CurrencyContext);
   const [isPopupActive, setStatusPopup] = useState(false);
-  
+
   return (
     <div className="bucket">
       <div
@@ -37,7 +40,7 @@ const Bucket = () => {
               {store.length} {store.length < 2 ? "item" : "items"}
             </span>
           </div>
-          <List orders={store}/>
+          <OrdersList orders={store} />
           {store.length > 0 && (
             <div className="popup__price">
               <span>Total</span>
