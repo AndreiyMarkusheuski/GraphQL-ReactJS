@@ -18,7 +18,7 @@
     }
 
     &__price {
-        margin-bottom: 35px;
+        margin-bottom: 10px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -46,23 +46,31 @@
             flex-direction: row;
             align-items: flex-start;
             justify-content: space-between;
-            // height: 137px;
 
-            margin-bottom: 40px;
+            padding-bottom: 40px;
+
+            .name, .brand, .price {
+                font-family: 'Raleway';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 160%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .price {
+                font-weight: 600;
+            }
 
             &_description {
-                width: 136px;
-                height: 100%;
+                height: 140px;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: space-between;
 
-                &>div {
-                    margin-bottom: 10px;
-                }
-
-                h2, h3, p {
+                .name, .brand, .price p {
                     font-family: 'Raleway';
                     font-style: normal;
                     font-weight: 300;
@@ -72,37 +80,52 @@
                     margin: 0;
                 }
 
-                p {
+                .price p{
                     font-weight: 600;
+                }
+
+                .description {
+                    margin-bottom: 27px;
                 }
             }
 
-            &_btns {
-                height: 100%;
+            &_container {
+                height: 140px;
+                width: 50%;
                 display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+                flex-direction: row;
+                align-items: normal;
+                justify-content: flex-start;
+                
+                .controls {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-right: 5px;
+    
+                    p {
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 100%;
+                        text-align: center;
+                        margin: 0;
+                        color: #1D1F22;
+                    }
+                }
 
-                p {
-                    font-family: 'Raleway';
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 16px;
-                    line-height: 160%;
-                    text-align: center;
-
-                    color: #1D1F22;
+                .swiper  {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                    }
                 }
             }
 
-            &_img {
-                height: 100%;
-                img {
-                    width: 105px;
-                    height: 100%;
-                    object-fit: contain;
-                }
-            }
+            
         }
     }
 

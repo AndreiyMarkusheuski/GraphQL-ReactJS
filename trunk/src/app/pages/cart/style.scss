@@ -1,25 +1,23 @@
 .cart {
-
-
     .list {
         &__orders {
             margin-top: 60px;
 
             .item {
-                // height: 185px;
-                padding-top: 20px;
-                margin-bottom: 20px;
+                padding: 20px 0;
                 border-top: 1px solid #E5E5E5;
 
                 display: flex;
                 flex-direction: row;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: flex-end;
 
                 &_description {
+                    height: auto;
                     flex: 1;
 
-                    &__text {
+                    .description {
+                        margin-bottom: 12px;
                         .name, .brand {
                             font-size: 30px;
                             line-height: 27px;
@@ -29,40 +27,68 @@
                             font-weight: 600;
                             margin-bottom: 16px;
                         }
+                    }
 
-                        .price {
+                    .price {
+                        p {
                             font-weight: 700;
                             font-size: 24px;
-                            line-height: 46px;
-                            margin-top: 12px;
+                            line-height: 24px;
+                            margin: 0;
+                        }
+                    }
+
+                    .attributes {
+                        flex-direction: row;
+                        margin-top: 20px;
+
+                        .attribute {
+                            margin: 0 20px 0 0;
+                            height: fit-content;
+
+                            .styledBtn {
+                                font-size: 16px;
+                                line-height: 18px;
+                                padding: 12px 20px;
+                                min-width: 44px;
+                                min-height: 44px;
+                            }
                         }
                     }
                 }
 
-                &_btns {
-                    .styledBtn {
-                        width: 45px;
-                        height: 45px;
-                        font-weight: 400;
-                        font-size: 32px;
-                        line-height: 45px;
+                &_container {
+                    height: 205px;
+                    justify-content: flex-end;
 
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                    .controls {
+                        margin-right: 20px;
+
+                        .styledBtn {
+                            width: 45px;
+                            height: 45px;
+                            font-weight: 400;
+                            font-size: 32px;
+                            line-height: 45px;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        p {
+                            font-weight: 600;
+                            font-size: 24px;
+                            line-height: 160%;
+                        }
                     }
 
-                    p {
-                        font-weight: 600;
-                        font-size: 24px;
-                        line-height: 160%;
-                    }
-                }
-
-                &_img {
-                    margin-left: 12px;
-                    img {
+                    .swiper {
+                        margin: 0;
                         width: 141px;
+                        img {
+                            width: 141px;
+                        }
                     }
                 }
             }

@@ -40,7 +40,7 @@ const Bucket = () => {
               {store.length} {store.length < 2 ? "item" : "items"}
             </span>
           </div>
-          <OrdersList orders={store} />
+          <OrdersList orders={store}/>
           {store.length > 0 && (
             <div className="popup__price">
               <span>Total</span>

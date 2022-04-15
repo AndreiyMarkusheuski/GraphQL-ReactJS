@@ -10,24 +10,27 @@ import {
 } from "../../Redux/middlewares";
 
 import Attributes from "../attributes";
+import SwiperCarusel from "../swiper";
 
 import { getPrice } from "../../helpers";
 
-const OrdersList = ({ orders, options }) => {
+const OrdersList = ({ orders, isDisplayAll }) => {
   const dispatch = useDispatch();
   const { currentCurrency } = useContext(CurrencyContext);
 
   return (
-    <ul className={`list__orders ${options}`}>
+    <ul className='list__orders'>
       {orders.map(({ id, name, prices, count, gallery, brand, attributes }) => (
         <li key={id} className="item">
           <div className="item_description">
-            <div className="item_description__text">
+            <div className="description">
               <h2 className="brand">{brand}</h2>
               <h3 className="name">{name}</h3>
-              <p className="price">{getPrice(prices, currentCurrency)}</p>
             </div>
-            <Attributes
+            <div className='price'>
+              <p>{getPrice(prices, currentCurrency)}</p>
+            </div>
+            {isDisplayAll && <Attributes
               attributes={attributes}
               handleClick={(attributeSet, attribute) =>
                 dispatch(
@@ -40,26 +43,27 @@ const OrdersList = ({ orders, options }) => {
                   )
                 )
               }
-            />
+            />}
           </div>
-          <div className="item_btns">
-            <button
-              className="styledBtn --square --border"
-              onClick={() => dispatch(addOneMore(orders, id))}
-            >
-              +
-            </button>
-            <p>{count}</p>
-            <button
-              className="styledBtn --square --border"
-              onClick={() => dispatch(removeOneMore(orders, id))}
-            >
-              -
-            </button>
-          </div>
-          <div className="item_img">
-            {/* Add swiper */}
-            <img src={gallery[0]} alt={name} />
+
+
+          <div className="item_container">
+            <div className="controls">
+              <button
+                className="styledBtn --square --border"
+                onClick={() => dispatch(addOneMore(orders, id))}
+              >
+                +
+              </button>
+              <p>{count}</p>
+              <button
+                className="styledBtn --square --border"
+                onClick={() => dispatch(removeOneMore(orders, id))}
+              >
+                -
+              </button>
+            </div>
+            <SwiperCarusel items={gallery} />
           </div>
         </li>
       ))}

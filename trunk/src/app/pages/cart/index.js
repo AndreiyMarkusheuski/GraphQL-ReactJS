@@ -11,7 +11,7 @@ const Cart = ({ title }) => {
     <div className="cart">
       <div className="container">
         <h1>{title}</h1>
-        {orders.length > 0 && <OrdersList orders={orders} />}
+        {orders.length > 0 && <OrdersList orders={orders} isDisplayAll/>}
       </div>
     </div>
   );
