@@ -4,7 +4,7 @@
     "description": "test",
     "main": "./src/index.js",
     "scripts": {
-        "start": "webpack-dev-server --config build/webpack.dev.conf.js --watch",
+        "start": "webpack-dev-server --config build/webpack.dev.conf.js --watch ",
         "build": "webpack --config build/webpack.prod.conf.js"
     },
     "license": "ISC",

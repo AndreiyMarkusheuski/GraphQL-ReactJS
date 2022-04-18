@@ -17,7 +17,7 @@ const Main = () => (
         path="/category/:filter"
         element={<Category title={"Category name"} />}
       />
-      <Route path="/tech" element={<Product title={"Product"} />} />
+      <Route path="/product/:id" element={<Product />} />
       <Route path="/cart" element={<Cart title={"Cart"} />} />
       <Route path="*" element={<Navigate to="/category/all" replace />} />
     </Routes>

@@ -6,11 +6,8 @@ const reducer = (state = initState, action) => {
   switch (action.type) {
     case actions.ADD_ONE_ORDER:
       return [...state, action.value];
-    case actions.REMOVE_ONE_ORDER:
-      const copyState = [...state];
-      return copyState.filter((item) => item.id !== action.value.id);
-    case actions.UPDATE_ORDERS:
-      return action.value;
+    case actions.UPDATE_ORDERS: 
+      return action.value
     default:
       return state;
   }

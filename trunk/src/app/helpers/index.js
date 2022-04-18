@@ -44,3 +44,23 @@ export const setCookies = (name, data) => {
 export const setLocalStorage = (name, data) => {
   localStorage.setItem(`${name}`, `${JSON.stringify(data)}`);
 };
+
+export const updateAttributes = (
+  product,
+  attributes,
+  attributeSet,
+  attribute
+) => {
+  const updatedAttrs = attributes.map((attr) => {
+    const updated = { ...attr };
+    if (attr.id === attributeSet) {
+      const parsedAttr = attr.items.map((elem) => ({
+        ...elem,
+        isSelected: elem.id === attribute,
+      }));
+      updated.items = parsedAttr;
+    }
+    return updated;
+  });
+  return { ...product, attributes: updatedAttrs };
+};

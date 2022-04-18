@@ -45,8 +45,6 @@ const OrdersList = ({ orders, isDisplayAll }) => {
               }
             />}
           </div>
-
-
           <div className="item_container">
             <div className="controls">
               <button

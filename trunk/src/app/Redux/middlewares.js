@@ -27,7 +27,7 @@ export const removeOneMore = (state, id) => async (dispatch) => {
 };
 
 export const updateAttributes =
-  (state, id, attributes, attributeSet, attribute) => async (dispatch) => {
+  (id, attributes, attributeSet, attribute) => async (dispatch) => {
     const copyState = [...state];
 
     const updatedAttrs = attributes.map((attr) => {

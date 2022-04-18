@@ -12,7 +12,7 @@ import { getPricesSum } from "../../helpers";
 import bucket from "../../../assets/images/svg/bucket.svg";
 
 const Bucket = () => {
-  const store = useSelector((state) => state);
+  const orders = useSelector((store) => store);
   const { currentCurrency } = useContext(CurrencyContext);
   const [isPopupActive, setStatusPopup] = useState(false);
 
@@ -25,8 +25,8 @@ const Bucket = () => {
         }}
       >
         <img className="bucket__button_img" src={bucket} alt="bucket" />
-        {store.length > 0 && (
-          <span className="bucket__button_status">{store.length}</span>
+        {orders.length > 0 && (
+          <span className="bucket__button_status">{orders.length}</span>
         )}
       </div>
       {isPopupActive && (
@@ -37,14 +37,14 @@ const Bucket = () => {
           <div className="popup__bag">
             <span>My Bag,</span>
             <span className="bag_number">
-              {store.length} {store.length < 2 ? "item" : "items"}
+              {orders.length} {orders.length < 2 ? "item" : "items"}
             </span>
           </div>
-          <OrdersList orders={store}/>
-          {store.length > 0 && (
+          <OrdersList orders={orders}/>
+          {orders.length > 0 && (
             <div className="popup__price">
               <span>Total</span>
-              <span>{getPricesSum(store, currentCurrency)}</span>
+              <span>{getPricesSum(orders, currentCurrency)}</span>
             </div>
           )}
           <div className="popup__btns">
