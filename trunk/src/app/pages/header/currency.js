@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 import { useQuery } from "@apollo/client";
 import { GET_CURRENCY } from "../../graphql-requests";
@@ -13,13 +13,16 @@ import arrow from "../../../assets/images/svg/arrow.svg";
 const Currency = () => {
   const [isPopupActive, setStatusPopup] = useState(false);
   const [currency, setCurrency] = useState(false);
-  const { loading, error, data } = useQuery(GET_CURRENCY, {
-    onCompleted: () => {
+  const { currentCurrency, handleChangeCurrency } = useContext(CurrencyContext);
+
+  const { loading, error, data } = useQuery(GET_CURRENCY);
+
+  useEffect(() => {
+    if (!loading && !error && data) {
       const { currencies } = data;
       setCurrency(currencies);
-    },
-  });
-  const { currentCurrency, handleChangeCurrency } = useContext(CurrencyContext);
+    }
+  }, [data]);
 
   return (
     <div
