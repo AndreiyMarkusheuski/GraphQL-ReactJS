@@ -6,7 +6,7 @@ export const CurrencyContext = React.createContext({
 });
 
 export const CurrencyProvider = ({ children }) => {
-  const cookiesCurrency = getCookie("currency").replaceAll('"', "") || "$";
+  const cookiesCurrency = getCookie("currency") || "$";
   const [currentCurrency, setCurrentCurrency] = useState(cookiesCurrency);
   const handleChangeCurrency = useCallback(
     (newCurrency) => {
